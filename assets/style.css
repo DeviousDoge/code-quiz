@@ -1,0 +1,35 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.question {
+    text-align: center;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: rgb(114, 79, 148);
+    color: white;
+    margin:10px;
+    width: 350px;
+}
+
+.result {
+    font-style:italic;
+    color: gray;
+    width: 300px;
+    padding: 5px;
+    border-top: 2px solid gray;
+}
