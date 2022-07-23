@@ -39,3 +39,4 @@ listen for buttonclick {
   ^^^^^
 Make result only show for 1 seconds
 
+-add new question and answers to the arrays, change the correctAnswer variable to 1
