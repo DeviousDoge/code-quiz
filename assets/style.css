@@ -17,6 +17,10 @@ h2 {
     align-items: center;
     margin-top: 100px;
 }
+.answers {
+    display:flex;
+    flex-direction: column;
+}
 
 button {
     border-radius: 10px;
@@ -27,9 +31,25 @@ button {
 }
 
 .result {
+    opacity: 0;
     font-style:italic;
     color: gray;
     width: 300px;
     padding: 5px;
     border-top: 2px solid gray;
 }
+
+.result.show {
+    animation: anime 1s 1;
+  }
+  @keyframes anime {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

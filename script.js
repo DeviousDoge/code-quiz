@@ -14,4 +14,17 @@ var one = document.querySelector('.answer1').textContent = answerListOne[questio
 var two = document.querySelector('.answer2').textContent = answerListTwo[questionNumber];
 var three = document.querySelector('.answer3').textContent = answerListThree[questionNumber];
 var four = document.querySelector('.answer4').textContent = answerListFour[questionNumber];
-var result =document.querySelector('.result');
+// var result =document.querySelector('.result');
+
+var button =document.querySelector('button');
+var result = document.querySelector('.result');
+var answers = document.querySelector('.answers');
+
+answers.addEventListener('click', (event) => {
+    var isButton = event.target.nodeName === 'BUTTON';
+    if (isButton) {
+  result.classList.remove('show');
+  void result.offsetWidth;
+  result.classList.add('show');
+    };
+});
