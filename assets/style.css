@@ -6,6 +6,11 @@ h2 {
     font-size: 30px;
 }
 
+h1 {
+    font-size: 58px;
+    text-align: center;
+}
+
 .question {
     text-align: center;
 }
