@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
   <div class="global">
+    <header>
+      <ul id="nav">
+        <li id="highscores">Click Here for High Scores!</li>
+        <li id="timer">Time Remaining: <span id="ticker"></span></li>
+      </ul>
+    </header>
   <div class="container">
     <h2 class="question"></h2>
     <div class="answers">
@@ -20,6 +26,7 @@
     <div class="result"></div>
   </div>
   <h1 class="congrats"></h1>
+  <input type="highscore" name="highscore" id="highscore" placeholder="enter name here"/>
   </div>
 <script src="script.js"></script>
 </body>

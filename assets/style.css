@@ -6,9 +6,21 @@ h2 {
     font-size: 30px;
 }
 
-h1 {
+ol, ul {
+    list-style: none;
+}
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.congrats {
     font-size: 58px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    justify-content: center;
+    margin:100px;
 }
 
 .question {
@@ -58,3 +70,5 @@ button {
       opacity: 0;
     }
   }
+
+ 
