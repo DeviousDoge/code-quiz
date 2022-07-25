@@ -6,10 +6,12 @@ h2 {
     font-size: 30px;
 }
 
-ol, ul {
+ ul {
     list-style: none;
 }
-
+nav {
+    margin:15px;
+}
 #nav {
     display: flex;
     flex-direction: row;
@@ -17,6 +19,13 @@ ol, ul {
     justify-content: space-between;
 }
 .congrats {
+    font-size: 58px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    justify-content: center;
+    margin:100px;
+}
+.winners{
     font-size: 58px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
@@ -103,5 +112,8 @@ button {
     font-size: 1.8rem;
  }
  
-
+.scorelists {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 29px;
+}
  

@@ -21,19 +21,21 @@ var congrats = document.querySelector('.congrats');
 var result = document.querySelector('.result');
 var answers = document.querySelector('.answers');
 var finished = document.querySelector('.finished');
-var userName = document.querySelector('#highscore');
+var highScore = document.querySelector('#highscore');
+var userName = document.querySelector('#userName');
 // Default state of HTML quiz elements
 question.textContent = questionList[questionNumber];
 one.textContent = answerListOne[questionNumber];
 two.textContent = answerListTwo[questionNumber];
 three.textContent = answerListThree[questionNumber];
 four.textContent = answerListFour[questionNumber];
-finished.removeChild(userName);
+finished.removeChild(highScore);
 //timer variables
-var secondsLeft = 60;
+var secondsLeft;
 var timeEl = document.querySelector("#ticker");
 //timer function
 function setTime() {
+  secondsLeft = 60;
   var timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
@@ -47,6 +49,9 @@ function setTime() {
         secondsLeft = 0;
         timeEl.textContent = secondsLeft;
         console.log(secondsLeft);
+    }
+    if(questionNumber === 5) {
+        clearInterval(timerInterval);
     }
   //run interval every second
   }, 1000);
@@ -87,8 +92,9 @@ answers.addEventListener('click', function(event) {
        //if user navigates past the 5th question, remove quiz and congratulate user
        if (questionNumber === 5) {
         global.removeChild(quiz);
-        finished.appendChild(userName);
+        finished.appendChild(highScore);
         congrats.textContent = 'YOU ARE WINNER';
+
     };  //otherwise, briefly display result class telling user they are incorrect    
         } else {
             result.classList.remove('show');
@@ -101,14 +107,21 @@ answers.addEventListener('click', function(event) {
     };
 });
 
-var highscores = [];
 
-var userScore = {
-    name: userName,
-    timeLeft: secondsLeft,
-};
-console.log(userScore);
-
-userName.addEventListener('submit', function(event) {
+//set userScores to local storage
+//push the new object onto the old object 
+//local storage getItem to retrieve the object
+highScore.addEventListener('submit', function(event) {
+    var userScores = JSON.parse(localStorage.getItem('savedScores')) || [];
+    var userScore = {
+        name: userName.value,
+        timeLeft: secondsLeft,
+    };
+    event.preventDefault();
+    userScores.push(JSON.stringify(userScore));
+    window.localStorage.setItem("savedScores", JSON.stringify(userScores));
+    location.href = "./assets/highscore.html";
     console.log(userScore);
+    console.log(secondsLeft);
+    console.log(userScores)
 });
