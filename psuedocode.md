@@ -40,3 +40,23 @@ listen for buttonclick {
 Make result only show for 1 seconds
 
 -add new question and answers to the arrays, change the correctAnswer variable to 1
+
+-created form for userName
+-created timer interval starting at 60 
+-created correctAnswers index of button classes
+-created navigate function changing indexNumber by +1 each time a correctAnswer is selected
+-Created quiz function as follows:
+-first check if timer is 0, then display TIMES UP!
+-otherwise check if button matches correctAnswers[questionNumber]
+-then run navigate function and display CORRECT
+-if qustionNumber = 5, terminate quiz and congratulate user
+-otherwise deduct time by 10 and tell user they are wrong
+
+-make it so when questionNumber = 5, timer stop and secondsLeft is sent to a userScore object
+
+
+-Hide form until questionNumber = 5
+-Send userInput to userScore object
+-save userScore object in localStorage
+-display userScore properties in new HTML page linked at 'highscores' tab.
+ -highscores array containing userscore objects

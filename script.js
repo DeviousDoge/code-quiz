@@ -20,12 +20,15 @@ var four = document.querySelector('.answer4');
 var congrats = document.querySelector('.congrats');
 var result = document.querySelector('.result');
 var answers = document.querySelector('.answers');
+var finished = document.querySelector('.finished');
+var userName = document.querySelector('#highscore');
 // Default state of HTML quiz elements
 question.textContent = questionList[questionNumber];
 one.textContent = answerListOne[questionNumber];
 two.textContent = answerListTwo[questionNumber];
 three.textContent = answerListThree[questionNumber];
 four.textContent = answerListFour[questionNumber];
+finished.removeChild(userName);
 //timer variables
 var secondsLeft = 60;
 var timeEl = document.querySelector("#ticker");
@@ -84,6 +87,7 @@ answers.addEventListener('click', function(event) {
        //if user navigates past the 5th question, remove quiz and congratulate user
        if (questionNumber === 5) {
         global.removeChild(quiz);
+        finished.appendChild(userName);
         congrats.textContent = 'YOU ARE WINNER';
     };  //otherwise, briefly display result class telling user they are incorrect    
         } else {
@@ -97,3 +101,14 @@ answers.addEventListener('click', function(event) {
     };
 });
 
+var highscores = [];
+
+var userScore = {
+    name: userName,
+    timeLeft: secondsLeft,
+};
+console.log(userScore);
+
+userName.addEventListener('submit', function(event) {
+    console.log(userScore);
+});

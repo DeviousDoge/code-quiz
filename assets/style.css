@@ -13,6 +13,7 @@ ol, ul {
 #nav {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .congrats {
@@ -30,13 +31,18 @@ ol, ul {
 .container {
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    flex-wrap:wrap;
     text-align:center;
     align-items: center;
     margin-top: 100px;
+    margin-right: 20px;
+    margin-left:20px;
 }
 .answers {
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 button {
@@ -70,5 +76,32 @@ button {
       opacity: 0;
     }
   }
+
+ .finished {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+ }
+
+ #highscore {
+    width: 500px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+ }
+ #name {
+    font-size: 1.8rem;
+ }
+
+ #userName {
+    align-self: center;
+    width: 300px;
+    height: 1.5rem;
+    font-size: 1.8rem;
+ }
+ 
 
  
