@@ -78,8 +78,12 @@ answers.addEventListener('click', function(event) {
             void result.offsetWidth;
             result.classList.add('show'); 
             result.textContent = 'TIMES UP!';
-            location.href = "./assets/highscore.html";
-        }
+            result.setAttribute('style', 'border-top:none');
+            result.setAttribute('style', 'border-bottom:2px solid gray');
+            global.removeChild(quiz);
+            finished.appendChild(highScore);
+            congrats.textContent = 'YOU ARE LOSER';
+        } 
         //if user presses button that matches the correct correctAnswers index depending on questionNumber
         else if (element.matches(correctAnswers[questionNumber])) {
        //briefly display result class with textcontent 'Correct'     
@@ -92,6 +96,9 @@ answers.addEventListener('click', function(event) {
        navigate(1);
        //if user navigates past the 5th question, remove quiz and congratulate user
        if (questionNumber === 5) {
+        result.textContent = 'ALL CORRECT!';
+        result.setAttribute('style', 'border-top:none');
+        result.setAttribute('style', 'border-bottom:2px solid gray');
         global.removeChild(quiz);
         finished.appendChild(highScore);
         congrats.textContent = 'YOU ARE WINNER';

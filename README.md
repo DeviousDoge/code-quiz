@@ -1,5 +1,5 @@
-# code-quiz
-Simple timed quiz game on JS fundamentals
+# Code-Quiz
+
 
 ## Description
 
@@ -13,6 +13,8 @@ The quiz UI functions by filling empty HTML elements via a series of arrays, ind
 
 There are hidden elements that are filled and appended when the index number reaches 5. The user can submit a name in a text form and if submitted the name and time left get indexed to an object, and then that object is added to an array downloaded and parsed from the local storage (or created from scratch upon a fresh installation). The array is packaged into strings in local storage and parsed again into the highscore page to be listed out in order of submission in the new page. 
 
+
+
 ## Installation
 
 1. Thanks to the World Wide Web you can view this document from any net-connected device using the following HyperText Transfer Protocol Secure Address: https://deviousdoge.github.io/code-quiz/
@@ -25,12 +27,23 @@ There are hidden elements that are filled and appended when the index number rea
 
 ![website](/assets/codequiz.png "website")
 
+
+![winner](/assets/winner.png "winner")
+
+
+![highscores](/assets/highscores.png "highscores")
+
 ## Credits
 
-Juliet Lamond (Major collaborator, helped greatly with concating the arrays and determining the logic of what the browser does when password does not meet length criteria)
+Juliet Lamond (Major collaborator, helped greatly with CSS and also provided the text for the first question in the initial brainstorming phase.)
+
 Github:https://github.com/jlamond37
 
 
+Freddie Kwak (Major Collaborator, helped greatly with the logic of the navigate function.)
 
+Github:https://github.com/fredkk22/Module-1-Challenge
+
+Code Snippets:
 https://stackoverflow.com/questions/11128700/create-a-ul-and-fill-it-based-on-a-passed-array
 https://www.codegrepper.com/code-examples/javascript/how+to+append+data+in+localstorage
