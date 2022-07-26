@@ -78,6 +78,7 @@ answers.addEventListener('click', function(event) {
             void result.offsetWidth;
             result.classList.add('show'); 
             result.textContent = 'TIMES UP!';
+            location.href = "./assets/highscore.html";
         }
         //if user presses button that matches the correct correctAnswers index depending on questionNumber
         else if (element.matches(correctAnswers[questionNumber])) {
@@ -108,20 +109,24 @@ answers.addEventListener('click', function(event) {
 });
 
 
-//set userScores to local storage
-//push the new object onto the old object 
-//local storage getItem to retrieve the object
+//when user clicks submit
 highScore.addEventListener('submit', function(event) {
+    //get userScores from local storage, or create a new array
     var userScores = JSON.parse(localStorage.getItem('savedScores')) || [];
     var userScore = {
         name: userName.value,
-        timeLeft: secondsLeft,
+        timeLeft: secondsLeft
     };
+    //do not refresh page
     event.preventDefault();
-    userScores.push(JSON.stringify(userScore));
+    //instead add the userinput to userScores array as a stringified object
+    //send it to local storage
+    //send user to highscore.html
+    userScores.push(userScore);
+    userScores.sort((a,b) => b.timeLeft-a.timeLeft);
     window.localStorage.setItem("savedScores", JSON.stringify(userScores));
     location.href = "./assets/highscore.html";
     console.log(userScore);
     console.log(secondsLeft);
-    console.log(userScores)
+    console.log(userScores);
 });

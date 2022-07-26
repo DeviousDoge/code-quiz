@@ -60,3 +60,15 @@ Make result only show for 1 seconds
 -save userScore object in localStorage
 -display userScore properties in new HTML page linked at 'highscores' tab.
  -highscores array containing userscore objects
+
+
+-sort userscore in highscores by timeLeft
+-userName array 
+-userScore array
+var newUserName, the initials the person inputs
+var newUserScore, timeLeft after user finishes
+
+let i = 0 i<username.length i++
+if new score> userscore[i] add to the first element of the Array and add user name to the ith element of the array and add username to the ith element of the array
+
+userScores.sort((a,b) => a.timeLeft-b.timeLeft);
